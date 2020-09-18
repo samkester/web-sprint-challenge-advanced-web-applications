@@ -113,7 +113,7 @@ const ColorList = ({ colors, updateColors }) => {
         </label>
         <div className="button-row">
           <button type="submit">save</button>
-          <button onClick={() => setColorToEdit(initialColor)}>cancel</button>
+          <button onClick={event => {event.preventDefault(); setColorToEdit(initialColor);}}>cancel</button>
         </div>
       </form>
     </div>
