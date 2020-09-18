@@ -21,7 +21,7 @@ const ColorList = ({ colors, updateColors }) => {
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
-    axiosWithAuth.put(`colors/${colorToEdit.id}`, colorToEdit)
+    axiosWithAuth().put(`colors/${colorToEdit.id}`, colorToEdit)
     .then(response => {
       //console.log(response);
       filterIntoColors(response.data);
@@ -38,7 +38,7 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = color => {
     // make a delete request to delete this color
-    axiosWithAuth.delete(`colors/${color.id}`)
+    axiosWithAuth().delete(`colors/${color.id}`)
     .then(response => {
       //console.log(response);
       removeColorById(response.data);

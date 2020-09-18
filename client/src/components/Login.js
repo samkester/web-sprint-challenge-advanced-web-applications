@@ -19,7 +19,7 @@ const Login = () => {
 
   const submitHandler = event => {
     event.preventDefault();
-    axiosWithAuth.post("login", login)
+    axiosWithAuth().post("login", login)
     .then(response => {
       console.log(response);
       localStorage.setItem("token", response.data.payload);
