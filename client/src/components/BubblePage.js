@@ -10,7 +10,7 @@ const BubblePage = () => {
   // set that data to the colorList state property
 
   useEffect(() => {
-    console.log(localStorage.getItem("token"));
+    //console.log(localStorage.getItem("token"));
     axiosWithAuth().get("colors")
     .then(response => {
       //console.log(response)
