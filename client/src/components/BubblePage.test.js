@@ -8,6 +8,8 @@ test("Fetches data and renders the bubbles", async () => {
   render(<BubblePage />)
 
   const color = await screen.findByText("aliceblue");
+  // since there's no way for the RTL to target objects with no text or role, this targets the ColorList instead of the bubbles proper,
+  // but that's enough to be sure that we're fetching information from the API and rendering it
 
   expect(color).toBeVisible();
 });
